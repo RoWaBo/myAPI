@@ -20,5 +20,5 @@ app.use("/api/v1", foods)
 app.use("/api/v1", accessories)
 
 app.listen(process.env.PORT || 4000, () => {
-    console.log("Express listens on port 4000")
+    console.log(`Express listens on ${process.env.PORT}`)
 })
