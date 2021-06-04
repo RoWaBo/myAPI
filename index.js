@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const formidable = require('express-formidable');
+const cors = require("cors")
 const animals = require('./routes/animals');
 const foods = require('./routes/foods');
 const accessories = require('./routes/accessories');
@@ -10,6 +11,11 @@ const app = express();
 
 // IMPORT DB COLLECTION 
 require("./database")
+
+app.use("/", express.static('docs'))
+
+// ALLOW REQUEST FROM OTHER ORIGINS WITH CORS (cross-origin resource sharing)
+app.use(cors())
 
 // PASS HTTP FORM DATA
 app.use(formidable())
