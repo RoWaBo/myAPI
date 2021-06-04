@@ -14,6 +14,8 @@ require("./database")
 
 app.use("/", express.static('docs'))
 
+app.use("/test", express.static('test-fetch'))
+
 // ALLOW REQUEST FROM OTHER ORIGINS WITH CORS (cross-origin resource sharing)
 app.use(cors())
 
